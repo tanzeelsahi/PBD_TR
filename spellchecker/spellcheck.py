@@ -28,12 +28,12 @@ def check_words(words, sentence):
     for word in words_to_check:
         if not check_word(words, word):
             print('Word is misspelt : ' + word)
-            return False
-    return True
+            failedwords.append(word)
+    return failedwords
 
 
 print load_words("spell.words")[0]
 
 print(check_word(words, 'zygotic'))
 
-print(check_words(words, 'zygotic mistasdas elementary'))
+print(failedwords(words, 'zygotic mistasdas elementary'))
